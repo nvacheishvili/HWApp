@@ -11,7 +11,9 @@ This project includes branches and each branch
 has a modification that we made together during the course.
 
 1. **initial-setup** 
-   2. Here you will find the initial setup created using the npx react-native init HWApp command
+   - Here you will find the initial setup created using the npx react-native init HWApp command
+3. **hello-world-modifications**
+   - Here you will find the modifications we made to transform this application into hello world app 
 
 If you'd like to run this project on your local environment 
 please clone this project and unzip the file and place it somewhere,
