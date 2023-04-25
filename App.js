@@ -14,6 +14,13 @@ const App = () => {
           marginBottom: 100, // sets the margin on the bottom side of the View component to 100 -- disable this for marginVertical to take effect
           marginVertical: 50, // sets the vertical margin (top and bottom) of the View component to 50
           marginHorizontal: 50, // sets the horizontal margin (left and right) of the View component to 50
+          padding: 10, // sets the padding inside the View component to 10 on all sides
+          paddingTop: 100, // sets the padding on the top side inside the View component to 100 -- disable this for paddingVertical to take effect
+          paddingLeft: 100, // sets the padding on the left side inside the View component to 100 -- disable this for paddingHorizontal to take effect
+          paddingRight: 10, // sets the padding on the right side inside the View component to 10 -- disable this for paddingHorizontal to take effect
+          paddingBottom: 100, // sets the padding on the bottom side inside the View component to 100 -- disable this for paddingVertical to take effect
+          paddingVertical: 50, // sets the vertical padding (top and bottom) inside the View component to 50
+          paddingHorizontal: 50, // sets the horizontal padding (left and right) inside the View component to 50
         }}>
         <Text>Hello World!</Text>
       </View>
