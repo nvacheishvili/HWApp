@@ -9,6 +9,8 @@ class App extends Component {
   constructor(props) {
     // Call the constructor of the parent class using the "super" keyword
     super(props);
+    // Initialize the state object with an empty object
+    this.state = {};
   }
 
   // Define a "render" method that returns a JSX element
@@ -16,7 +18,9 @@ class App extends Component {
     return (
       // Render a SafeAreaView component that contains a Text component with the text "Hello World!"
       <SafeAreaView>
-        <Text>Hello World!</Text>
+        <Text onPress={() => this.setState({name: 'Nata'})}>
+          Hello, {this.state?.name}!
+        </Text>
       </SafeAreaView>
     );
   }
