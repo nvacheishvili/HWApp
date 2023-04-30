@@ -4,14 +4,18 @@ import {
   ScrollView,
   TextInput,
   // Button,
-  Pressable,
+  TouchableOpacity,
+  Switch,
   Text,
+  View,
 } from 'react-native';
 
 const App = () => {
   // Declare state variables to hold the email and password values entered by the user
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // Declare state variables to hold the value of keeping user logged in or not
+  const [shouldKeepLoggedIn, setShouldKeepLoggedIn] = useState(true);
   return (
     <SafeAreaView>
       <ScrollView>
@@ -43,6 +47,14 @@ const App = () => {
             setPassword(value);
           }}
         />
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+          {/*-- Switch component to decide whether user wants to stay logged in or not --*/}
+          <Switch
+            value={shouldKeepLoggedIn} //Current value of the switch (true - on, false - off)
+            onValueChange={value => setShouldKeepLoggedIn(value)} //on switch value change, reset the state variable as well
+          />
+          <Text>Keep me logged in</Text>
+        </View>
         {/* -- Background Color does not work with button component, therefore we're going to use Pressable
             <Button
               title={'Submit'}
@@ -50,7 +62,7 @@ const App = () => {
               style={{backgroundColor: 'black'}}
             />
         */}
-        <Pressable
+        <TouchableOpacity
           // Set the style of the Pressable to have a black background color
           // Set opacity to 0.5 if either email or password is missing or the password is less than 8 characters
           style={[
@@ -59,15 +71,15 @@ const App = () => {
           ]}
           // Disable the Pressable if either email or password is missing or the password is less than 8 characters
           disabled={email.length === 0 || password.length < 8}
-          // Set the onPress function to log the email and password values to the console
+          // Set the onPress function to log the email, password and keep me logged in values to the console
           onPress={() => {
             console.log('clicked');
-            console.log(email, password);
+            console.log(email, password, shouldKeepLoggedIn);
           }}>
           <Text style={{color: 'white', textAlign: 'center', padding: 10}}>
             Submit
           </Text>
-        </Pressable>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
