@@ -4,7 +4,7 @@ import MyText from './components/MyText/MyText';
 const App = () => {
   return (
     <SafeAreaView>
-      <MyText />
+      <MyText name={'Nata'} />
     </SafeAreaView>
   );
 };
