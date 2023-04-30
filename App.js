@@ -9,6 +9,9 @@ import {
   Text,
   View,
 } from 'react-native';
+//Fontawesome imports
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   // Declare state variables to hold the email and password values entered by the user
@@ -76,9 +79,28 @@ const App = () => {
             console.log('clicked');
             console.log(email, password, shouldKeepLoggedIn);
           }}>
-          <Text style={{color: 'white', textAlign: 'center', padding: 10}}>
-            Submit
-          </Text>
+          <View
+            // Set the style of the View to have a flex of 1,
+            // row direction, centered alignment vertical in this case,
+            // and justified content horizontal in this case
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text
+              // Set the style of the Text to have white color, center alignment, and padding
+              style={{color: 'white', textAlign: 'center', padding: 10}}>
+              Submit
+            </Text>
+            <FontAwesomeIcon
+              // Set the icon of the FontAwesomeIcon component to the faCheck icon
+              icon={faCheck}
+              // Set the color of the FontAwesomeIcon component to white
+              style={{color: 'white'}}
+            />
+          </View>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
